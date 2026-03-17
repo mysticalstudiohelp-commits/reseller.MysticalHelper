@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystical Helper | Cyber Beauty & Fashion Dropship – Sydney AU</title>
+  <style>
+    :root {
+      --primary: #00f0ff;
+      /* Cyan/neon cyber accent */
+      --accent: #ff00aa;
+      /* Pink-magenta mystical touch */
+      --dark: #0a001e;
+      --light: #e0f7ff;
+      --gray: #88ccff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000814;
+      color: #e0f7ff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to bottom, rgba(0, 240, 255, 0.15), transparent);
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .currency-selector {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(10, 0, 30, 0.4);
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--primary);
+    }
+
+    .currency-selector select {
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 0.4rem;
+      border-radius: 6px;
+    }
+
+    nav {
+      background: rgba(10, 0, 30, 0.6);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0, 240, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 8px var(--primary);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-shadow: 0 0 12px var(--accent);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(10, 0, 30, 0.7)),
+        url('https://thumbs.dreamstime.com/b/futuristic-cyan-wireframe-wave-landscape-glowing-polygon-grid-digital-horizon-abstract-technology-background-442746498.jpg');
+      background-size: cover;
+      background-position: bottom;
+      color: white;
+      text-align: center;
+      padding: 12rem 2rem 8rem;
+      position: relative;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-shadow: 0 0 30px var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: rgba(10, 0, 30, 0.5);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      transition: all 0.4s;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+      border-color: var(--primary);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.8rem;
+    }
+
+    .product-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--light);
+    }
+
+    .price {
+      font-size: 1.7rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin: 0.6rem 0;
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    .desc {
+      color: var(--gray);
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255, 0, 170, 0.7);
+    }
+
+    footer {
+      background: linear-gradient(to top, #000814, rgba(10, 0, 30, 0.8));
+      color: var(--gray);
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 8rem 1rem 6rem;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 1rem 0;
+      }
+
+      .currency-selector {
+        position: static;
+        margin: 1rem auto;
+        display: block;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Mystical Helper Dropship</h2>
+    <p>Cyber Beauty, Fashion & Digital Vibes – Fast AU Shipping from Sydney</p>
+
+    <div class="currency-selector">
+      <label for="currency">Currency: </label>
+      <select id="currency">
+        <option value="AUD">AUD (Default)</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Welcome to the Grid</h1>
+    <p>Unlock ethereal style in a cyber world. High-vibe beauty & fashion, dropshipped with mystical energy.
+      Sydney-based, global glow.</p>
+    <a href="#products" class="btn">Enter the Shop</a>
+  </section>
+
+  <div class="container" id="products">
+    <h2 style="text-align:center; margin:4rem 0 3rem; color:var(--primary); text-shadow:0 0 20px var(--primary);">
+      Featured Drops</h2>
+
+    <div class="products">
+
+      <div class="product-card">
+        <img src="https://images.gumtree.com.au/image/private/t_$_s-l800/gumtree/1968b482-26bc-4d51-8dfe-f06dfd1f2a51.jpg" alt="Nike Duel Racer US9 Mens, US10 Womens">
+        <div class="product-info">
+          <h3>Nike Duel Racer US9 Mens, US10 Womens</h3>
+          <div class="price" data-base-price="85">$34.99 AUD</div>
+          <p class="desc">Amplify your aura. Natural jade with cyber glow vibes. Fast AU dispatch.</p>
+          <a href="https://wa.me/61481283707?text=Hi%20Mystical%20Helper!%20I%20want%20the%20Nike%20Duel%20Racer%20US9%20Mens%20US10%20Womens"
+            class="btn" target="_blank">Acquire</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1625772299848-361b803ffa25?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jade Roller">
+        <div class="product-info">
+          <h3>Neon Jade Energy Roller</h3>
+          <div class="price" data-base-price="34.99">$34.99 AUD</div>
+          <p class="desc">Amplify your aura. Natural jade with cyber glow vibes. Fast AU dispatch.</p>
+          <a href="https://wa.me/61481283707?text=Hi%20Mystical%20Helper!%20I%20want%20the%20Neon%20Jade%20Energy%20Roller"
+            class="btn" target="_blank">Acquire</a>
+        </div>
+      </div>
+      
+
+      <!-- Add your other products here the same way -->
+
+    </div>
+  </div>
+
+  <footer id="contact">
+    <p>© 2026 Mystical Helper | Sydney, Australia – Cyber Realm</p>
+    <p>DM on Instagram: <a href="https://instagram.com/mysticalhelper" target="_blank">@mysticalhelper</a> | WhatsApp:
+      +61 YOUR NUMBER</p>
+    <p>Step into the grid – questions welcome in any dimension.</p>
+  </footer>
+
+  <script>
+    // Currency logic (same as before)
+    const rates = {
+      AUD: 1,
+      USD: 0.67,
+      EUR: 0.62,
+      GBP: 0.52
+    };
+    const currencySelect = document.getElementById('currency');
+    const priceElements = document.querySelectorAll('.price');
+
+    function updatePrices() {
+      const selected = currencySelect.value;
+      const rate = rates[selected];
+      priceElements.forEach(el => {
+        const base = parseFloat(el.getAttribute('data-base-price'));
+        const conv = (base * rate).toFixed(2);
+        const sym = selected === 'USD' ? '$' : selected === 'EUR' ? '€' : selected === 'GBP' ? '£' : 'AUD $';
+        el.textContent = `${sym}${conv} ${selected}`;
+      });
+    }
+    updatePrices();
+    currencySelect.addEventListener('change', updatePrices);
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
