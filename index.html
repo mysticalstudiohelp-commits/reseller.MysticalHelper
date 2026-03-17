@@ -5,6 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mystical Helper | Cyber Beauty & Fashion Dropship – Sydney AU</title>
+  <head>
+  <!-- ... your existing meta tags ... -->
+  
+  <!-- Prevent clickjacking (X-Frame-Options alternative) -->
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  
+  <!-- Block MIME-type sniffing (prevents bad content execution) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  
+  <!-- Referrer policy: Limit info leaked in links (good privacy) -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Basic CSP via meta (GitHub Pages allows limited CSP meta; test carefully) -->
+  <!-- Start strict, then loosen if things break (e.g., external images/fonts) -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' https://images.unsplash.com https://thumbs.dreamstime.com data:;
+    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline';
+    connect-src 'self';
+    frame-ancestors 'none';
+  ">
+  
+  <!-- Upgrade insecure requests (force HTTPS for sub-resources) -->
+  <meta http-equiv="Upgrade-Insecure-Requests" content="1">
+</head>
   <style>
     :root {
       --primary: #00f0ff;
